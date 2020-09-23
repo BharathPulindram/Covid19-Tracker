@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(233, 221, 221);
+}
+.app {
+  display: flex;
+  justify-content: space-evenly;
+}
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
