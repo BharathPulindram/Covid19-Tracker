@@ -14,7 +14,8 @@ import { sortData, prettyPrintStat } from "./util";
 import numeral from "numeral";
 import Map from "./Map";
 import "leaflet/dist/leaflet.css";
-
+import ToggleOffIcon from "@material-ui/icons/ToggleOff";
+import ToggleOnIcon from "@material-ui/icons/ToggleOn";
 const App = () => {
   const [country, setInputCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
@@ -22,8 +23,9 @@ const App = () => {
   const [mapCountries, setMapCountries] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [casesType, setCasesType] = useState("cases");
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
-  const [mapZoom, setMapZoom] = useState(3);
+  const [mapCenter, setMapCenter] = useState({ lat: 20.5937, lng: 78.9629 });
+  const [mapZoom, setMapZoom] = useState(2);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -70,12 +72,19 @@ const App = () => {
         setMapZoom(4);
       });
   };
-
+  const handleToggle = (e) => {
+    e.preventDefault();
+    setToggle(!toggle);
+  };
   return (
     <div className="app">
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 Tracker</h1>
+          <div onClick={handleToggle} className="toggle">
+            {toggle ? <ToggleOffIcon /> : <ToggleOnIcon className="darkMode" />}
+          </div>
+
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"

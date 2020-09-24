@@ -48,6 +48,10 @@ body {
 .app__information > h3:last-of-type {
   margin-top: 1rem;
 }
+.toggle .MuiSvgIcon-root {
+  font-size: 2rem !important;
+  color: rgb(2, 58, 44);
+}
 
 @media (max-width: 990px) {
   .app {

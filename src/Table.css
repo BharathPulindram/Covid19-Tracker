@@ -1,6 +1,6 @@
 .table {
   margin-top: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
   color: #6a5d5d;
   background-color: white;
   height: 400px;
@@ -9,6 +9,11 @@
 .table tr {
   display: flex;
   justify-content: space-between;
+  background-image: linear-gradient(
+    45deg,
+    rgb(230, 162, 85),
+    rgb(248, 164, 230)
+  );
 }
 
 .table td {
@@ -17,5 +22,9 @@
 }
 
 .table tr:nth-of-type(odd) {
-  background-color: #f3f2f8;
+  background-image: linear-gradient(
+    45deg,
+    rgb(128, 227, 235),
+    rgb(131, 240, 158)
+  );
 }
